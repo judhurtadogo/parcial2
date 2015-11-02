@@ -13,7 +13,7 @@ abstract class Sequence {
     for (int i=0; i<n; i++)
       seq[i] = compute(i+1);
     return seq;
-  }
+  
   
   /**
    * Returns the first n seq terms as a string.

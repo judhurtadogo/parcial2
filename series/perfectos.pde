@@ -1,39 +1,75 @@
 class Perfectos extends Sequence {
-String author(){
-   String autor="Autor: Euclides de Megara";
-  return autor;
-}
+  
+  Perfectos(int n){
+    compute(n);
+  }  
+  
+  String author(){
+    String autor="Autor: Euclides de Megara";
+    return autor;
+  }
 
-String description(){
-String descripcion = "Un númeroperfecto es un número natural que es igual a la suma de sus divisores propios positivos,. Dicho de otra forma, un número perfecto es aquel que es amigo de sí mismo."; 
-return descripcion;
-}
+  String description(){
+    String descripcion = "Un númeroperfecto es un número natural que es igual a la suma de sus divisores propios positivos,. Dicho de otra forma, un número perfecto es aquel que es amigo de sí mismo."; 
+    return descripcion;
+  }
 
-//muestra el enesimo  termino 
+  //muestra el enesimo  termino 
+   int [] Div(int n){
+    int tam=0;
+    if(n==1){
+      int [] b= new int[1];
+      b[0] =1;
+      return b;
+    }
+    for(int j=1;j<n;j++){
+    int res=n%j;
+    if (res==0){
+      tam++;
+    }
+    }
+    int[] v = new int[tam];
+    int p=0;
+    for (int k=1;k<n;k++){
+        int res=n%k;
+        if (res==0){
+        v[p]=k;
+        p++;
+        }
+    }
+    //println(v[],"tam");
+    return v;
+  }
 
 int compute(int n){
-  int p=0, i, res=0;
-int k=0;
-int cont=1, j=999999999;
-for(cont=1; cont<=j; cont++){
-        p=cont;
-       int sum=0;
-        for(i=1; i<p; i++){
-            res=p%i;
-          if(res==0){ 
-               sum+=i;
-              }
-        }
-if(sum==p){
-  k++;
-  if(k==n){
-  j=0;
-  }}
-}
-return p;  
-}
+  int i=0, N=0;
+  for(i=1;true;i++){
+     int [] c = Div(i);
+        int ene=0;
+       // println(c.length,"l");
+      for(int j=0; j<c.length; j++){
+       ene = c[j]+ene;
+    }
+    if (ene==i){
+        N+=1;
+        //println(N);
+      }
+  if (N==n){
+  break;
+  }
+  }
+  return i;
+ }
+ 
+ void imprimir(int[] c){
+   println("imprimiendo vector c");
+   for(int i=0; i<c.length; i++){
+      println("c[",i,"]",c[i]);
+   }
+ }
+
 //prueba un numero ingresado
-       String proof(int n){
+      /* String proof(int n){
          String ex = "c";
          int res, sum;
          sum=0; res=0;
@@ -55,7 +91,7 @@ return p;
             }}
           
           return ex;
-}
+}*/
 
 
 }
