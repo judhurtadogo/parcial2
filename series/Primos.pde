@@ -1,16 +1,20 @@
 class Primos extends Perfectos{
   
+  Primos(int n){
+    imprimir(Div(n));
+  }
+  
   String author(){
     String autor="Autor: Pitágoras";
     return autor;
   }
 
   String description(){
-    String descripcion = "Un númeroperfecto es un número natural que es igual a la suma de sus divisores propios positivos,. Dicho de otra forma, un número perfecto es aquel que es amigo de sí mismo."; 
+    String descripcion = "Un número primo es un número natural mayor que 1 que puede descomponerse solamente en dos factores distintos: él mismo y el 1"; 
     return descripcion;
   }
   
-  nt [] Div(int n){
+  int [] Div(int n){
     int tam=0;
     if(n==1){
       int [] b= new int[1];
@@ -32,4 +36,11 @@ class Primos extends Perfectos{
         p++;
         }
     }
+    
+   
+ }
+ void imprimir(int[] c){
+   for(int i=0; i<c.length; i++){
+      println("c[",i,"]",c[i]);
+   }
 }

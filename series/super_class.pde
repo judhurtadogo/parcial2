@@ -10,12 +10,15 @@ abstract class Sequence {
   
   int [] toArray(int n) {
     int[] seq = new int[n];
-    for (int i=0; i<n; i++)
+    for (int i=0; i<n; i++){
       seq[i] = compute(i+1);
+    }
     return seq;
-  
-  
-  /**
+  }
+}
+/*
+
+/**
    * Returns the first n seq terms as a string.
    * Sequence may then simply be printed as: println(sequence.toString(n))
    */
@@ -53,5 +56,3 @@ abstract class Sequence {
    */
   //void curveFitting(int n) {
     //TODO misssing implementation
-  //}
-}

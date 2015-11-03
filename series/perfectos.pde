@@ -1,7 +1,7 @@
 class Perfectos extends Sequence {
   
   Perfectos(int n){
-    compute(n);
+    println(compute(n));
   }  
   
   String author(){
