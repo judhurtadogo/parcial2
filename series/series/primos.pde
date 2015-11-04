@@ -36,4 +36,31 @@ class primos extends perfectos{
   return v;
   
   }
+   void display(int n){
+    
+  int radio =0;
+  float randR =0, randG =0, randB =0; 
+  randR = random(0,255);
+  randG = random(0,255);
+  randB = random(0,255);
+  if(n<VCT.length){
+    radio=VCT[n]*20;  
+    stroke(randR,randG,randB);
+    noFill();
+    ellipse(206,400,VCT[n]*20,VCT[n]*20);
+  }
+  
+    for(int i=0; i<23; i++){
+      if(i%2==0){
+        stroke(randR,randG,randB);
+        noFill();
+        arc(206+(i*radio)+radio/2,400,radio,radio,PI,2*PI);
+      }else{
+        stroke(randR,randG,randB);
+        noFill();
+        arc(206+(i*radio)+radio/2,400,radio,radio,0,PI);  
+        }
+      }
+}
+
 }

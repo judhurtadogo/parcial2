@@ -1,4 +1,4 @@
-
+perfectos perf;
 primos prim;
 
 int[] VCT;
@@ -6,8 +6,9 @@ int[] VCT;
 void setup() {
   
   prim = new primos();
+  perf = new perfectos();
+  size(800, 800);
   
-  size(800, 1000);
   noSmooth();
   fill(126);
   background(255);
@@ -15,7 +16,7 @@ void setup() {
   VCT = new int[10];
   for(int i=0; true; i++){
     if(prim.Div(i+2).length==1){
-       println(i+2, cont);
+      
        VCT[cont-1]=(i+2);
        cont++;    
     }
@@ -23,42 +24,49 @@ void setup() {
       break;
     }
   }
+ 
+}
+int n=0;
+
+void keyPressed(){
+if (key == 'b'){
+     String a=prim.author();
+     println(a);
+     String d=prim.description();
+     println(d);
+   } 
+   
+ if (key == 'p'){
+     String a=perf.author();
+     println(a);
+     String d=perf.description();
+     println(d);
+   } 
+   
+  
+}
+ 
+void mouseClicked(){
+if (mouseButton == RIGHT){
+n--;
+}
+if (mouseButton == LEFT){
+n++;
+}
+   if (key == 'b'){
+     prim.display(n);
+   }
+   if (key == 'p'){
+    int s= perf.compute(n);
+    println (s); 
+   } 
+   
+   
 }
 
 void draw() {
-  stroke(0,255,255);
-  line(0, 400, 1000, 400);
-  line(206, 0, 206, 1000);
-  
-    
-}
-
-int n=0, radiov=0;
-
-void mouseClicked(){
-  int radio =0;
-  float randR =0, randG =0, randB =0; 
-  randR = random(0,255);
-  randG = random(0,255);
-  randB = random(0,255);
-  if(n<VCT.length){
-    radio=VCT[n]*20;  
-    stroke(randR,randG,randB);
-    noFill();
-    ellipse(206,400,VCT[n]*20,VCT[n]*20);
-  }
-  
-    for(int i=0; i<23; i++){
-      if(i%2==0){
-        stroke(randR,randG,randB);
-        noFill();
-        arc(206+(i*radio)+radio/2,400,radio,radio,PI,2*PI);
-      }else{
-        stroke(randR,randG,randB);
-        noFill();
-        arc(206+(i*radio)+radio/2,400,radio,radio,0,PI);  
-        }
-      }
-    n++;
-    radiov=radio;
-}
+      stroke(0,255,255);
+      line(0, 400, 1000, 400);
+      line(206, 0, 206, 1000);
+      
+    }
