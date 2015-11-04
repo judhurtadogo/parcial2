@@ -1,25 +1,22 @@
-Perfectos perf;
-Sequence seq;
 
-
-Primos prim;
+primos prim;
 
 int[] VCT;
 
 void setup() {
   
-  prim = new Primos();
+  prim = new primos();
   
   size(800, 1000);
   noSmooth();
   fill(126);
   background(255);
-  int tam=0, valor = 6, cont = 0;
-  int[] vct = new int[6];
+  int cont = 1;
+  VCT = new int[10];
   for(int i=0; true; i++){
     if(prim.Div(i+2).length==1){
-       println(i+2);
-       VCT[cont]=(i+2);
+       println(i+2, cont);
+       VCT[cont-1]=(i+2);
        cont++;    
     }
     if(cont==VCT.length+1){

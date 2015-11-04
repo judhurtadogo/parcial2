@@ -1,16 +1,12 @@
-class Primos extends Perfectos{
-  
-  Primos(int n){
-    imprimir(Div(n));
-  }
+class primos extends perfectos{
   
   String author(){
-    String autor="Autor: Pitágoras";
+    String autor="Autor: Euclides";
     return autor;
   }
 
   String description(){
-    String descripcion = "Un número primo es un número natural mayor que 1 que puede descomponerse solamente en dos factores distintos: él mismo y el 1"; 
+    String descripcion = "un número primo es un número natural mayor que 1 que puede descomponerse solamente en dos factores distintos: él mismo y el 1"; 
     return descripcion;
   }
   
@@ -36,11 +32,8 @@ class Primos extends Perfectos{
         p++;
         }
     }
-    
-   
- }
- void imprimir(int[] c){
-   for(int i=0; i<c.length; i++){
-      println("c[",i,"]",c[i]);
-   }
+
+  return v;
+  
+  }
 }

@@ -1,8 +1,4 @@
-class Perfectos extends Sequence {
-  
-  Perfectos(int n){
-    println(compute(n));
-  }  
+class perfectos extends sequence{
   
   String author(){
     String autor="Autor: Euclides de Megara";
@@ -14,7 +10,7 @@ class Perfectos extends Sequence {
     return descripcion;
   }
 
-  //muestra el enesimo  termino 
+//muestra el enesimo  termino 
    int [] Div(int n){
     int tam=0;
     if(n==1){
@@ -37,7 +33,6 @@ class Perfectos extends Sequence {
         p++;
         }
     }
-    //println(v[],"tam");
     return v;
   }
 
@@ -46,13 +41,11 @@ int compute(int n){
   for(i=1;true;i++){
      int [] c = Div(i);
         int ene=0;
-       // println(c.length,"l");
       for(int j=0; j<c.length; j++){
        ene = c[j]+ene;
     }
     if (ene==i){
         N+=1;
-        //println(N);
       }
   if (N==n){
   break;
@@ -67,31 +60,4 @@ int compute(int n){
       println("c[",i,"]",c[i]);
    }
  }
-
-//prueba un numero ingresado
-      /* String proof(int n){
-         String ex = "c";
-         int res, sum;
-         sum=0; res=0;
-         for(int i=1; i<n; i++){
-            res=n%i;
-          if(res==0){ 
-               sum+=i;
-              }
-          }
-          if (sum==n){
-              ex="el numero ingresado es un numero perfecto"; 
-          }
-          if (sum==1){
-            ex= "el numero ingresado es un numero primo";
-          }
-          if (sum!=n){
-            if (sum!=1){
-          ex = "el numero ingresado no entra en ninguna de las secuencias probadas"; 
-            }}
-          
-          return ex;
-}*/
-
-
-}
+ }
