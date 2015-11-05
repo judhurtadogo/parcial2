@@ -1,4 +1,4 @@
-class Perrin extends Sequence {
+class Perrin extends sequence {
 String author(){
    String autor="Autor: Édouard Lucas";
   return autor;
