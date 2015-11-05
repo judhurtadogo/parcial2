@@ -1,5 +1,5 @@
-int n=0;
-
+int j=0;
+int n=10;
 Perrin perr;
 perfectos perf;
 primos prim;
@@ -15,7 +15,7 @@ void setup() {
   
   noSmooth();
   fill(126);
-  background(255);
+  background(0);
   int cont = 1;
   VCT = new int[10];
   for(int i=0; true; i++){
@@ -42,7 +42,7 @@ void setup() {
 }
 
 void keyPressed(){
-if (key=='u'){
+
   if (key == 'b'){
      String a=prim.author();
      println(a);
@@ -56,7 +56,7 @@ if (key=='u'){
      String d=perf.description();
      println(d);
    }
-  }
+  
  if(key=='c'){
     println("\n",perr.author());
     println(perr.description());
@@ -69,33 +69,31 @@ if (key=='u'){
  
 void mouseClicked(){
 if (mouseButton == RIGHT){
-n--;
+j--;
 }
 if (mouseButton == LEFT){
-n++;
+j++;
 }
-if (key == 'u'){
    if (key == 'b'){
-     prim.display(n);
+     prim.display(j);
    }
    if (key == 'p'){
-    int s= perf.compute(n);
+    int s= perf.compute(j);
     println (s); 
    } 
-  }
    
 }
 
 void draw() {
-  if (key=='u'){
       stroke(0,255,255);
       line(0, 400, 1000, 400);
       line(206, 0, 206, 1000);
-      }
+      
       if(key=='c'){ 
+       background(255,0,0);
        for(int i=1;i<=n;i++){
          car[i-1].display();
          car[i-1].move();
          }
        }
-    }
+   
