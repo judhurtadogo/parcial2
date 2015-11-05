@@ -14,8 +14,7 @@ public class Carro{
   }
   
   void display(){
-  strokeWeight(xspeed+1);
-  stroke(0,360,360);
+  noStroke();
   fill(c);
   ellipse(xpos+35,ypos+height/(2*n),height/n,height/n);
   }
