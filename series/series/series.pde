@@ -44,6 +44,7 @@ void setup() {
 void keyPressed(){
 
   if (key == 'b'){
+     background(0);
      String a=prim.author();
      println(a);
      String d=prim.description();
@@ -51,6 +52,7 @@ void keyPressed(){
    } 
    
   if (key == 'p'){
+    background(0);
      String a=perf.author();
      println(a);
      String d=perf.description();
