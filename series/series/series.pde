@@ -1,5 +1,6 @@
 int n=0;
 
+Perrin perr;
 perfectos perf;
 primos prim;
 Carro [] car= new Carro[n];
